@@ -33,7 +33,7 @@ var init = function (window) {
         // TODO 3 / 8 : Call the drawCircle() function 
         var loopsCompleted = 0; 
         while (loopsCompleted < 100) {
-            // do something
+            drawCircle();
             loopsCompleted++
         }
         
@@ -49,26 +49,14 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-            physikz.updatePosition(circle);
-
-            physikz.updatePosition([0]);
-            physikz.updatePosition([1]);
-            physikz.updatePosition([2]);
-            physikz.updatePosition([3]);
-            physikz.updatePosition([4]);
         
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-           game.checkCirclePosition();
-
-           game.checkCirclePosition([0]);
-           game.checkCirclePosition([1]);
-           game.checkCirclePosition([2]);
-           game.checkCirclePosition([3]);
-           game.checkCirclePosition([4]);
-            // TODO 9 : Iterate over the array
-            for (var i = 0; i < myArray.length; i++) {
-                var eachValue = myArray[i];
                 
+            // TODO 9 : Iterate over the array
+            for (var i = 0; i < circles.length; i++) {
+                var eachCircle = circles[i];
+                physikz.updatePosition(eachCircle);
+                game.checkCirclePosition(eachCircle);
                 // code to repeat using eachValue
             
         }
@@ -86,14 +74,14 @@ var init = function (window) {
             }
             
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
-            if ( circle.x > canvas.width) {
-               circle.x = 6; 
+            if ( circle.x < 0) {
+               circle.x = canvas.width; 
             }
-            if (conditon === true) {
-             circle. x = 6;   
+            if (circle.y > canvas.height) {
+             circle.y = 0;   
             }
-            if (circle.y > canvas.width) {
-                circle.y = 12;
+            if (circle.y < 0) {
+                circle.y = canvas.height;
             }
 
 
