@@ -23,15 +23,21 @@ var init = function (window) {
         var circle;
         var circles = [];
 
-        // TODO 2 : Create a function that draws a circle 
-        function drawCircle();{
-            
-        }
+        // TODO 2 : Create a function that draws a circle  
+        circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
+            physikz.addRandomVelocity(circle, canvas);
+            view.addChild(circle);
+            circles.push(circle);  
+        
        
         // TODO 3 / 8 : Call the drawCircle() function 
-        for (var loopsCompleted = 0; loopsCompleted < 100; loopsCompleted++) {
-
+        var loopsCompleted = 0; 
+        while (loopsCompleted < 100) {
+            // do something
+            loopsCompleted++
         }
+        
+
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -60,10 +66,13 @@ var init = function (window) {
            game.checkCirclePosition([3]);
            game.checkCirclePosition([4]);
             // TODO 9 : Iterate over the array
-           
+            for (var i = 0; i < myArray.length; i++) {
+                var eachValue = myArray[i];
+                
+                // code to repeat using eachValue
             
         }
-    
+        }
         /* 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
